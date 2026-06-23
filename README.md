@@ -106,7 +106,6 @@ I also didn't use any pre-made UI libraries. Everything — the modals, dropdown
 
 ### What would I improve with more time?
 
-- Drag and drop to move projects between statuses (like a Kanban board)
 - A project detail page when you click on a project
 - End-to-end tests with Playwright or Cypress
 - Bulk delete for selecting multiple projects at once
@@ -124,6 +123,5 @@ Yes — I used **Antigravity IDE (Google DeepMind)** and **OpenAI Codex**.
 - Helping with folder structure and planning
 - Generating first drafts of components and types
 - Writing initial unit tests
-- Helping write this README
 
 I read and reviewed everything the AI generated before using it. Nothing was blindly copy-pasted.
