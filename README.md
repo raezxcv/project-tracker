@@ -2,7 +2,9 @@
 
 A task management app for tracking client projects — built for the Frontend Developer Technical Assessment.
 
-**Repo:** https://github.com/raezxcv/project-tracker
+**🔗 Live Demo:** https://project-tracker-git-main-raely-ivan-reyes-projects.vercel.app
+
+**📁 Repo:** https://github.com/raezxcv/project-tracker
 
 ---
 
