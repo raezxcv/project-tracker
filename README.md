@@ -1,70 +1,45 @@
 # Client Project Tracker
 
-> A responsive, full-featured task management application built as a Frontend Developer Technical Assessment.
+A task management app for tracking client projects — built for the Frontend Developer Technical Assessment.
 
-Live demo can be run locally — see [Setup](#setup) below.
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Tech Stack & Technology Choices](#tech-stack--technology-choices)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Setup](#setup)
-- [How to Run](#how-to-run)
-- [Running Tests](#running-tests)
-- [Assumptions Made](#assumptions-made)
-- [Technical Reflection](#technical-reflection)
-- [AI Disclosure](#ai-disclosure)
+**Repo:** https://github.com/raezxcv/project-tracker
 
 ---
 
-## Overview
+## What it does
 
-A digital agency project tracker where users can **create, view, update, and delete** client projects. Each project tracks a client name, project name, description, status, priority, start date, and due date. The app includes a live dashboard, search, filtering, sorting, dark mode, and localStorage persistence — all without a backend.
+You can create, view, edit, and delete client projects. Each project has a name, client, description, status, priority, start date, and due date.
+
+It also has a dashboard that shows you an overview of all your projects at a glance.
 
 ---
 
-## Tech Stack & Technology Choices
+## Tech Stack
 
-| Technology | Version | Why it was chosen |
-|---|---|---|
-| [React](https://react.dev/) | 19 | Industry-standard for component-based UIs; excellent TypeScript integration |
-| [TypeScript](https://www.typescriptlang.org/) | 5 | Catches bugs at compile time; makes component contracts explicit |
-| [Vite](https://vite.dev/) | 6 | Fastest dev server and build tool for React apps today |
-| [Tailwind CSS](https://tailwindcss.com/) | v4 | Utility-first styling with zero config in v4; keeps styles co-located with markup |
-| [Vitest](https://vitest.dev/) | 3 | Native Vite test runner; no config overhead; compatible with Jest APIs |
-
-**No external UI component libraries were used.** All components (modals, dropdowns, cards, dialogs) were built from scratch to demonstrate frontend fundamentals.
+| Tech | Why I used it |
+|---|---|
+| React 19 | I'm most comfortable with it and it's the industry standard |
+| TypeScript | Helps catch mistakes early and makes the code easier to understand |
+| Vite | Fast to set up and run |
+| Tailwind CSS v4 | Easy to style things quickly without writing separate CSS files |
+| Vitest | Simple test runner that works great with Vite |
 
 ---
 
 ## Features
 
-### Core Requirements
-- ✅ **Create Project** — modal form with all 8 required fields
-- ✅ **View Projects** — responsive list: data table on desktop, card stack on mobile
-- ✅ **Edit Project** — same modal component, pre-filled with existing values
-- ✅ **Delete Project** — confirmation dialog to prevent accidental removal
-- ✅ **Form Validation** — required fields enforced; due date must be ≥ start date; inline error messages
+**Required:**
+- ✅ Create, view, edit, and delete projects
+- ✅ Form validation (required fields, due date must be after start date)
+- ✅ Loading and empty states
 
-### Bonus Features
-- ✅ **Dashboard** — live metrics: total, open, active, high priority, completion rate
-- ✅ **Status Mix** — visual breakdown of projects per workflow stage
-- ✅ **Upcoming Work** — top 5 open projects sorted by due date, with status-coloured cards
-- ✅ **Delivery Focus** — open, completed, and high priority project counts at a glance
-- ✅ **Search** — real-time search across client name, project name, and description
-- ✅ **Filter by Status / Priority** — dropdown filters with instant results
-- ✅ **Sort** — by due date, start date, priority, or project name
-- ✅ **localStorage Persistence** — all data survives page refreshes
-- ✅ **Seed Data** — 7 sample projects loaded on first run
-- ✅ **Overdue Highlighting** — red badge on past-due, incomplete projects
-- ✅ **Dark Mode** — respects system preference; toggle in topbar; persisted to localStorage
-- ✅ **Active Tab Persistence** — last visited tab (Dashboard / Projects) restored on refresh
-- ✅ **Toast Notifications** — success/info feedback after create, update, and delete actions
-- ✅ **Unit Tests** — 23 tests covering state management, date utilities, and form validation
+**Extras I added:**
+- ✅ Dashboard with live stats (total, active, completed, high priority)
+- ✅ Search, filter by status/priority, and sort
+- ✅ Projects save to localStorage so data stays after refresh
+- ✅ Overdue project highlighting
+- ✅ Dark mode (follows your system setting, can be toggled)
+- ✅ 23 unit tests
 
 ---
 
@@ -72,173 +47,83 @@ A digital agency project tracker where users can **create, view, update, and del
 
 ```
 src/
-├── components/
-│   ├── ConfirmDialog.tsx      # Accessible delete confirmation dialog
-│   ├── CustomSelect.tsx       # Reusable styled select input
-│   ├── DashboardSummary.tsx   # Dashboard: metrics, status mix, upcoming work, delivery focus
-│   ├── ProjectCard.tsx        # Mobile card view for a single project
-│   ├── ProjectFormModal.tsx   # Create & edit form modal
-│   ├── ProjectList.tsx        # Responsive table / card list with loading skeleton
-│   ├── ProjectToolbar.tsx     # Filter, sort, and add-project controls
-│   └── ThemeSwitch.tsx        # Dark mode toggle
-│
-├── hooks/
-│   ├── useProjects.ts         # All project state, CRUD operations, localStorage sync
-│   └── useProjects.test.ts    # Unit tests for the state hook
-│
-├── types/
-│   └── project.ts             # TypeScript types, enums, and constants
-│
-├── utils/
-│   ├── formatDate.ts          # Date formatting and overdue detection
-│   ├── formatDate.test.ts     # Unit tests for date utilities
-│   ├── projectValidation.ts   # Form validation logic (pure functions)
-│   └── projectValidation.test.ts  # Unit tests for validation rules
-│
-├── data/
-│   └── test_data.json         # 7 seed projects for first-load
-│
-├── App.tsx                    # Layout shell, routing between sections, topbar
-├── main.tsx                   # React entry point
-└── index.css                  # Tailwind imports, Google Fonts, custom animations
+├── components/     # All UI components (modals, cards, forms, dashboard)
+├── hooks/          # useProjects.ts — all project data and CRUD logic lives here
+├── types/          # TypeScript types
+├── utils/          # Date formatting and form validation helpers
+└── App.tsx         # Main layout
 ```
 
 ---
 
 ## Setup
 
-### Prerequisites
-
-- **Node.js** 18 or higher
-- **npm** 9 or higher
-
-### Install Dependencies
+Make sure you have **Node.js 18+** installed.
 
 ```bash
 npm install
-```
-
----
-
-## How to Run
-
-### Development
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Production Build
-
-```bash
-npm run build
-npm run preview
-```
-
-The production bundle is output to `dist/`.
+Then open http://localhost:5173 in your browser.
 
 ---
 
-## Running Tests
+## Run Tests
 
 ```bash
-# Run all tests once
 npm run test
-
-# Watch mode (re-runs on file change)
-npm run test:watch
 ```
 
-**Test coverage:**
-
-| File | Tests | What's covered |
-|---|---|---|
-| `projectValidation.test.ts` | 11 | Required fields, date ordering, edge cases |
-| `formatDate.test.ts` | 6 | Display formatting, overdue detection, boundary dates |
-| `useProjects.test.ts` | 6 | Create, read, update, delete, localStorage sync |
-| **Total** | **23** | |
+23 tests total — covers form validation, date utilities, and the project state hook.
 
 ---
 
-## Assumptions Made
+## Assumptions I Made
 
-1. **No backend required** — project data is managed entirely in React state and persisted to `localStorage`. This was explicitly permitted by the assessment spec.
-
-2. **Seed data on first load** — if `localStorage` has no saved projects, `test_data.json` (7 sample projects) is used as the initial dataset to give reviewers something to interact with immediately.
-
-3. **IDs generated client-side** — `Date.now()` is used as a unique ID for new projects. This is sufficient for a single-user, no-sync application.
-
-4. **Dates stored as ISO strings** (`YYYY-MM-DD`) — locale-specific display formatting happens at render time only, avoiding timezone conversion bugs from `new Date()`.
-
-5. **Description is optional** — it is part of the project model but is not listed as a required field in the spec's validation rules, so it is treated as optional.
-
-6. **Start date is optional** — the spec states due date must be ≥ start date *if a start date is provided*. A project with only a due date is valid.
-
-7. **Single-user, in-browser only** — no authentication, no multi-user concurrency, and no server-side data.
+1. No backend needed — data is saved in the browser using localStorage
+2. On first load, 7 sample projects are shown so there's something to look at
+3. Project IDs are generated using `Date.now()` — simple and works fine for a single-user app
+4. Dates are stored as plain strings (YYYY-MM-DD) to avoid timezone issues
+5. Description and start date are optional — they're not required by the spec
+6. This is single-user only — no login or accounts needed
 
 ---
 
 ## Technical Reflection
 
-### 1. Why did you choose this implementation approach?
+### Why did I build it this way?
 
-The key architectural decision was to centralise all project state and CRUD operations in a single custom hook — `useProjects`. This keeps components purely concerned with rendering and user interaction, while the data layer is isolated and independently testable.
+I kept things simple. All the project data and actions (create, edit, delete) live in one custom hook called `useProjects`. This means each component just handles what it shows on screen — not how data is stored. If I needed to swap localStorage for a real API later, I'd only need to change one file.
 
-I chose Tailwind CSS v4 because it requires zero configuration (just `@import "tailwindcss"` in the CSS file) and keeps styles directly alongside markup, which makes reviewing a component's visual intent much easier. I deliberately avoided external UI component libraries (shadcn, MUI, Radix) to demonstrate that I can build accessible, polished components from scratch.
+I also didn't use any pre-made UI libraries. Everything — the modals, dropdowns, cards — I built from scratch. I wanted to show I can do that without relying on outside tools.
 
-Vite was chosen over Create React App because of its significantly faster HMR and build times, and because it is now the standard for new React projects.
+### What tradeoffs did I make?
 
-### 2. What tradeoffs did you make?
+- I wrote my own form validation instead of using a library like `react-hook-form`. It's simpler and shows I understand how forms work, but a real production app would probably use a library.
+- localStorage works great here, but it obviously won't sync across devices or browsers.
+- I used simple Tailwind animations instead of a full animation library. Keeps things lightweight.
 
-- **Custom form validation vs. react-hook-form** — I wrote validation from scratch. This kept dependencies minimal and let me demonstrate understanding of controlled form state, but `react-hook-form` would be more robust and performant at scale (especially with deeply nested or dynamic fields).
+### What would I improve with more time?
 
-- **CSS breakpoint layout switching vs. a single adaptive component** — The project list uses a full `<table>` on desktop and stacked `<article>` cards on mobile. This gives a genuinely optimised experience on each screen size, but it means some display logic is duplicated. A single component that adapts its internal layout (e.g. using CSS Grid) would be more DRY.
+- Drag and drop to move projects between statuses (like a Kanban board)
+- A project detail page when you click on a project
+- End-to-end tests with Playwright or Cypress
+- Bulk delete for selecting multiple projects at once
+- Keyboard shortcuts (e.g. press N to create a new project)
 
-- **localStorage vs. a real API** — localStorage is instant and requires no backend, which was appropriate for the time constraints. The tradeoff is that data does not persist across devices or browsers and has a 5MB size limit. Because all data access goes through `useProjects`, replacing localStorage with an API call (e.g. `fetch`, `axios`, React Query) requires changes in only one file.
+### What was the hardest part?
 
-- **No animations library** — transitions are handled with Tailwind's `transition-*` and `animate-*` utilities plus a few custom `@keyframes` in `index.css`. This is lightweight and sufficient for this scale, but something like Framer Motion would enable more sophisticated page transitions and gesture-based interactions.
+Getting the form validation to feel right. I wanted errors to only show after you first try to submit (not while you're still typing), but then update immediately after that. Getting that timing right without weird bugs took a few tries.
 
-### 3. What would you improve if given additional time?
+### Did I use AI tools?
 
-- **Drag-and-drop** — allow reordering projects or dragging them between status columns (Kanban style), using the native HTML5 Drag and Drop API or `@dnd-kit/core`.
-- **Project detail page** — clicking a project opens a dedicated detail view with full description, activity log, and edit history.
-- **End-to-end tests** — Playwright or Cypress tests covering the full CRUD lifecycle, dark mode persistence, and overdue badge logic across different dates.
-- **Optimistic updates** — show changes immediately in the UI and roll back silently on failure; this matters once a real API is introduced.
-- **Keyboard shortcuts** — `N` to open the new project modal, `Escape` to close any open modal/dropdown, `?` to show a shortcut map.
-- **Multi-select and bulk delete** — select multiple projects and delete or update them at once.
-- **Column visibility toggle** — allow users to show/hide table columns to match their workflow.
+Yes — I used **Antigravity IDE (Google DeepMind)** and **OpenAI Codex**.
 
-### 4. What was the most challenging part of this assessment?
+**What I used them for:**
+- Helping with folder structure and planning
+- Generating first drafts of components and types
+- Writing initial unit tests
+- Helping write this README
 
-Managing the interaction between **form validation state**, **controlled input state**, and the **modal lifecycle**. The desired UX was:
-
-- No errors shown until the user first attempts to submit (avoid scaring users before they have a chance to fill in the form).
-- After a failed submit, errors should update on every keystroke (immediate feedback once the user knows the form has issues).
-- Errors should fully reset when the modal is reopened or when switching between create and edit modes.
-
-This required a `hasSubmitted` flag in the form state and careful coordination between the validation function, the `useEffect` that re-runs validation after submit, and the modal's `onClose` callback. Getting this lifecycle correct without introducing stale-closure bugs or flickers took the most iteration.
-
-### 5. Did you use AI tools during development?
-
-Yes — see the [AI Disclosure](#ai-disclosure) section below.
-
----
-
-## AI Disclosure
-
-**Tool used:** Antigravity IDE (Google DeepMind)
-
-**How it was used:**
-
-| Task | Role of AI |
-|---|---|
-| Initial folder structure and component breakdown | AI suggested the structure; I reviewed and adjusted it |
-| TypeScript type definitions (`project.ts`) | AI drafted the initial types; I verified them against the spec |
-| Component boilerplate (modal, confirm dialog) | AI generated first drafts; I reviewed, customised, and integrated them |
-| Unit test scaffolding | AI wrote initial test cases; I added edge cases and fixed mocked timers |
-| Dashboard UI redesign | Iterative back-and-forth: I described intent, AI produced markup, I reviewed and refined |
-| README | AI drafted the structure; I reviewed all content for accuracy |
-
-All generated code was read, understood, and verified against the project requirements before acceptance. No code was blindly copy-pasted without review.
+I read and reviewed everything the AI generated before using it. Nothing was blindly copy-pasted.
