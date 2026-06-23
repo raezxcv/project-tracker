@@ -39,6 +39,8 @@ It also has a dashboard that shows you an overview of all your projects at a gla
 - ✅ Dashboard with live stats (total, active, completed, high priority)
 - ✅ Search, filter by status/priority, and sort
 - ✅ Projects save to localStorage so data stays after refresh
+- ✅ Drag and drop projects between status columns
+- ✅ Instantly update project status through a Kanban-style board
 - ✅ Overdue project highlighting
 - ✅ Dark mode (follows your system setting, can be toggled)
 - ✅ 23 unit tests
