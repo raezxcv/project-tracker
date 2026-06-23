@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "clientName": "Acme Corporation",
+    "projectName": "Corporate Website Redesign",
+    "description": "Full redesign of the Acme corporate website with a modern UI, improved performance, and mobile-first approach.",
+    "status": "In Progress",
+    "priority": "High",
+    "startDate": "2026-05-01",
+    "dueDate": "2026-07-31"
+  },
+  {
+    "id": 2,
+    "clientName": "Brightside Media",
+    "projectName": "Brand Identity Package",
+    "description": "Design a complete brand identity including logo, color palette, typography system, and brand guidelines document.",
+    "status": "Planning",
+    "priority": "Medium",
+    "startDate": "2026-06-15",
+    "dueDate": "2026-08-15"
+  },
+  {
+    "id": 3,
+    "clientName": "Nova Logistics",
+    "projectName": "Shipment Tracking Dashboard",
+    "description": "Build a real-time shipment tracking dashboard for internal use by the operations and logistics team.",
+    "status": "In Progress",
+    "priority": "High",
+    "startDate": "2026-04-10",
+    "dueDate": "2026-06-30"
+  },
+  {
+    "id": 4,
+    "clientName": "Green Earth Foundation",
+    "projectName": "Annual Fundraising Campaign Site",
+    "description": "Develop a campaign microsite for the annual fundraising drive with donor stories, progress tracker, and donation integration.",
+    "status": "Completed",
+    "priority": "Medium",
+    "startDate": "2026-02-01",
+    "dueDate": "2026-04-30"
+  },
+  {
+    "id": 5,
+    "clientName": "Vertex Technologies",
+    "projectName": "SaaS Onboarding Flow Redesign",
+    "description": "Redesign the user onboarding experience for the Vertex SaaS platform to reduce early drop-off rates and improve activation.",
+    "status": "On Hold",
+    "priority": "Low",
+    "startDate": "2026-05-20",
+    "dueDate": "2026-09-01"
+  },
+  {
+    "id": 6,
+    "clientName": "Coastal Realty Group",
+    "projectName": "Property Listings Portal",
+    "description": "Build a searchable property listings portal with map integration, advanced filters, virtual tour embeds, and agent contact forms.",
+    "status": "Planning",
+    "priority": "High",
+    "startDate": "2026-07-01",
+    "dueDate": "2026-10-31"
+  },
+  {
+    "id": 7,
+    "clientName": "SkyLine Hotels",
+    "projectName": "Guest Experience Web App",
+    "description": "Mobile-first progressive web app for hotel guests to access room services, restaurant menus, concierge bookings, and local guides.",
+    "status": "Completed",
+    "priority": "Medium",
+    "startDate": "2026-01-15",
+    "dueDate": "2026-03-31"
+  }
+]
