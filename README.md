@@ -6,6 +6,22 @@ Users can add, edit, delete, search, filter, and sort projects. The app also has
 
 Live demo: https://project-tracker-git-main-raely-ivan-reyes-projects.vercel.app
 
+## Features Implemented
+
+- View all client projects
+- Add a new project
+- Edit project details
+- Delete a project
+- Validate required form fields
+- Check that due date is not earlier than start date
+- Show loading, empty, and error states
+- Search projects
+- Filter projects by status and priority
+- Sort projects
+- Show a dashboard summary
+- Responsive design for mobile screens
+- Unit tests
+
 ## Setup Instructions
 
 Clone the project, then install the packages:
